@@ -1,5 +1,7 @@
 package entities;
 
+import java.sql.Timestamp;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,19 +16,29 @@ import lombok.Data;
 
 @Entity
 @Table(name="CUSTOMER")
-public @Data class Customer {
+public @Data  class Customer {
 	@Id @GeneratedValue
-	private int customerID;
+	private long customerID;
 	
-	@Column(name = "customerName", nullable = false, length = 500)
+	@Column(name = "customerName", nullable = false, length = 100)
 	private String customerName;
+	
 	@Column(name = "address", nullable = false, length = 2500)
 	private String address;
+	
+	@Column(name="contactNo")
+	private String contactNo;
+	
 	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-    @JoinColumn(name="imageID",insertable=true,
-        updatable=true,nullable=true,unique=true)
+@JoinColumn(name="imageID")
 	private Image image;
+	
+	@Column(name="createTS")
+	private Timestamp createTS;
+
+	
 	
 	
 
 }
+

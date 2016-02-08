@@ -12,7 +12,9 @@
     
     <mapping class="entities.Customer"/>
     <mapping class="entities.Image"/>
-    
+    <mapping class="entities.Item"/>
+     <mapping class="entities.Bill"/>
+    <mapping class="entities.BillItem"/>
 
  </session-factory>
 </hibernate-configuration>
