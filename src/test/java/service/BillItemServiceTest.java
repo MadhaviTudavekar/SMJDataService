@@ -26,9 +26,9 @@ public class BillItemServiceTest {
 	@Test
 	public void testAddBillItem() {
 		AnnotationConfiguration cfg=new AnnotationConfiguration();  
-	cfg.configure("main/resources/hibernate.cfg.xml");//populates the data of the configuration file 	
+	    cfg.configure("main/resources/hibernate.cfg.xml");//populates the data of the configuration file 	
 	
-	SessionFactory sessionFactory=cfg.buildSessionFactory();
+	    SessionFactory sessionFactory=cfg.buildSessionFactory();
 	    Session session=sessionFactory.openSession();
 		Bill bill=new Bill();
 		Calendar c=Calendar.getInstance();
